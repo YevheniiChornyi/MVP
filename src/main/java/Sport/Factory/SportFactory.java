@@ -1,0 +1,11 @@
+package Sport.Factory;
+
+import CustomException.WrongFileFormatException;
+import Player.PlayerService;
+import Sport.*;
+import Sport.Enums.KindOfSport;
+
+public interface SportFactory {
+
+    Sport create(KindOfSport kindOfSport, PlayerService playerService) throws WrongFileFormatException;
+}
