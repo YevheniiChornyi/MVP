@@ -1,8 +1,6 @@
 package Session;
 
 import CustomException.WrongFileFormatException;
-import Player.PlayerService;
-import Player.PlayerServiceImpl;
 import Sport.Enums.KindOfSport;
 import java.io.File;
 import java.io.IOException;
@@ -18,11 +16,13 @@ public class Tournament {
     final private PlayerService playerService = new PlayerServiceImpl();
 
     final private String path = "src/main/resources/matches";
+    // directory with input files
     final private File dir = new File(path);
     File[] arrFiles = dir.listFiles();
 
 
     List<File> fileList;
+
     {
         assert arrFiles != null;
         fileList = Arrays.asList(arrFiles);
@@ -35,16 +35,16 @@ public class Tournament {
     }
 
     private void splitFiles() throws WrongFileFormatException {
-        Logger.debug("Files{} {} {} ",path,arrFiles[0],arrFiles[1]);
+        Logger.debug("Files{} {} {} ", path, arrFiles[0], arrFiles[1]);
         KindOfSport kindOfSport = KindOfSport.UNKNOWN;
-        for (File file:
-            fileList ) {
+        for (File file :
+                fileList) {
             List<String> allLines = this.newMatch(file.getPath());
 
 
-            for (KindOfSport value:
-                 KindOfSport.values()) {
-                if (value.name().equals(allLines.get(0))){
+            for (KindOfSport value :
+                    KindOfSport.values()) {
+                if (value.name().equals(allLines.get(0))) {
                     kindOfSport = value;
                 }
             }
@@ -65,7 +65,7 @@ public class Tournament {
                 e.printStackTrace();
             }
         }
-        return  allLines;
+        return allLines;
     }
 
 }

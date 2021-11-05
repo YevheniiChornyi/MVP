@@ -1,14 +1,13 @@
 package Session;
 
 import CustomException.WrongFileFormatException;
-import Player.PlayerService;
 import Sport.Factory.Factory;
 import Sport.Enums.KindOfSport;
 import Sport.Sport;
 
 import java.util.List;
 
-public class MatchImpl implements Match{
+public class MatchImpl implements Match {
 
     private final KindOfSport kindOfSport;
     private final PlayerService playerService;

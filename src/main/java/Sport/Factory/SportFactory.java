@@ -1,7 +1,7 @@
 package Sport.Factory;
 
 import CustomException.WrongFileFormatException;
-import Player.PlayerService;
+import Session.PlayerService;
 import Sport.*;
 import Sport.Enums.KindOfSport;
 

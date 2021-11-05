@@ -48,8 +48,8 @@ public class BasketballPlayer {
     private final Integer rebounds;
     private final Integer assist;
 
-    public Integer getRatingPoints(){
-        return (scoredPoints*2 + rebounds + assist);
+    public Integer getRatingPoints() {
+        return (scoredPoints * 2 + rebounds + assist);
     }
 
 

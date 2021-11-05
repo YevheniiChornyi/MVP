@@ -1,4 +1,5 @@
 package Player;
+
 import org.tinylog.Logger;
 
 public class Player implements Comparable<Player> {
@@ -21,7 +22,7 @@ public class Player implements Comparable<Player> {
     @Override
     public String toString() {
         return "Player " +
-                 name + '\'' +
+                name + '\'' +
                 ", also called " + nickname +
                 ", with score " + score;
     }
@@ -32,10 +33,10 @@ public class Player implements Comparable<Player> {
         this.score = 0;
     }
 
-    public void addPoints(int points){
-        Logger.debug("addPoints/points before:{} {} \n",this::getNickname,this::getScore);
+    public void addPoints(int points) {
+        Logger.debug("addPoints/points before:{} {} \n", this::getNickname, this::getScore);
         this.score += points;
-        Logger.debug("addPoints/points after:{} {} \n",this::getNickname,this::getScore);
+        Logger.debug("addPoints/points after:{} {} \n", this::getNickname, this::getScore);
     }
 
     public int compareTo(Player player) {
